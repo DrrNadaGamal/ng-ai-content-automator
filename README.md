@@ -18,7 +18,8 @@ Content Automator in the admin menu.
 56 checks in WordPress Playground (WP latest, PHP 8.2) against a simulated Gemini reply: queue rules, prompt, parsing and sanitizing, draft-only creation, failures (bad JSON, short text, HTTP 500, transport error, bad key, no key), retry, approval rules, cron cap, escaping, permission and nonce checks.
 
 ## Honest limits
-- Not tested against the live Gemini API (no key was available). The request shape follows the public docs. The default model name `gemini-flash-latest` is not verified, so it is a setting.
+- Live test with a real Gemini key and the default model `gemini-flash-lite-latest`: a draft of about 700 words was generated and saved as a draft, not published. Model names change and the larger Flash models returned "high demand" errors during testing, so the model stays a setting.
+- Arabic, French and German AI text can contain wording mistakes. Read it before you approve it. The page shows a reminder.
 - AI text can contain mistakes. Read and fact-check every draft before approving. Medical, legal and financial topics need extra care.
 - No images, no SEO fields, no internal links in drafts.
 - Hourly auto-draft relies on WP-Cron, which runs when the site gets visits.

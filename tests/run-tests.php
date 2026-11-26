@@ -41,7 +41,7 @@ $t('post is DRAFT, never published',get_post_status($pid)==='draft');
 $t('post marked generated + keyword meta',get_post_meta($pid,'_ngaca_generated',true)==='1'&&get_post_meta($pid,'_ngaca_keyword',true)==='kidney stones prevention');
 $t('queue item is drafted with post_id',NGACA::find($id)['status']==='drafted'&&NGACA::find($id)['post_id']===$pid);
 $last=end($REQ); $t('request: key in header, not in URL',$last['args']['headers']['x-goog-api-key']==='GOODKEY'&&strpos($last['url'],'GOODKEY')===false);
-$t('request: json mime + model in url',strpos($last['url'],'gemini-flash-latest')!==false&&strpos($last['args']['body'],'responseMimeType')!==false);
+$t('request: json mime + model in url',strpos($last['url'],'gemini-flash-lite-latest')!==false&&strpos($last['args']['body'],'responseMimeType')!==false);
 $t('draft content contains no script',strpos(get_post($pid)->post_content,'<script')===false);
 $t('generate on non-queued item refused',is_wp_error(NGACA::generate($id)));
 $cnt=count($REQ); NGACA::generate($id); $t('no second API call for a drafted item',count($REQ)===$cnt);
